@@ -11,7 +11,7 @@ function guardar($archivo,$datos){
     $json = json_encode($datos);
     file_put_contents($archivo,$json); //guardo archivo
 }
-function mostrar($archivo,$datos){
+function mostrar($archivo){
     $tienda_json = file_get_contents($archivo);
     $decoded_json = json_decode($tienda_json, true); //true array asociado, false clase
     for($i=0;$i<count($decoded_json);$i++){
@@ -58,6 +58,6 @@ RECUPERACIÓN DE DATOS
 *
 *
 */
-mostrar($archivo,$tienda);
+mostrar($archivo);
 
 ?>
