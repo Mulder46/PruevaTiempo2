@@ -14,9 +14,9 @@ function guardar($archivo,$datos){
 function mostrar($archivo,$datos){
     $tienda_json = file_get_contents($archivo);
     $decoded_json = json_decode($tienda_json, true); //true array asociado, false clase
-    for($i=0;$i<count($datos);$i++){
-        echo "Descripción: ".$datos[$i]['descripcion']." a un precio de: ".$datos[$i]['precio']."€ tenemos en stock: ".$datos[$i]['cantidad']."<br>";
-        echo "<img width='70' height='70' src=".$datos[$i]['url']."><br>";
+    for($i=0;$i<count($decoded_json);$i++){
+        echo "Descripción: ".$decoded_json[$i]['descripcion']." a un precio de: ".$decoded_json[$i]['precio']."€ tenemos en stock: ".$decoded_json[$i]['cantidad']."<br>";
+        echo "<img width='70' height='70' src=".$decoded_json[$i]['url']."><br>";
     }
 }
 
